@@ -38,14 +38,7 @@ onMounted(async () => {
         </button>
       </div>
       
-      <div class="mt-32 z-10" v-animate data-delay="300">
-        <p class="text-xs font-bold tracking-[2px] text-slate-500 mb-6">TRUSTED BY:</p>
-        <div class="flex justify-center items-center flex-wrap gap-10 md:gap-16">
-          <div class="text-2xl font-bold text-slate-400 hover:text-slate-800 transition-colors flex items-center gap-2">Webflow</div>
-          <div class="text-2xl font-bold text-slate-400 hover:text-slate-800 transition-colors flex items-center gap-2">GitHub</div>
-          <div class="text-2xl font-bold text-slate-400 hover:text-slate-800 transition-colors flex items-center gap-2">Postman</div>
-        </div>
-      </div>
+      
     </section>
 
     <!-- Services Section -->
