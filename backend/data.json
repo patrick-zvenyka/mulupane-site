@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Managed IT Support",
+      "description": "Comprehensive IT support services including network management, helpdesk, and cybersecurity.",
+      "price": 499.99,
+      "imageUrl": ""
+    },
+    {
+      "id": 2,
+      "name": "Cloud Migration",
+      "description": "Seamless migration of your on-premise infrastructure to AWS, Azure, or Google Cloud.",
+      "price": 2500,
+      "imageUrl": ""
+    },
+    {
+      "id": 3,
+      "name": "Custom Software Development",
+      "description": "Tailored software solutions to streamline your business operations.",
+      "price": 5000,
+      "imageUrl": ""
+    }
+  ]
+}
