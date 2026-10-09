@@ -48,68 +48,37 @@ const submitProduct = async () => {
 </script>
 
 <template>
-  <div class="admin animate-fade-in">
-    <div class="glass form-container">
-      <h2>Publish New Product/Service</h2>
+  <div class="px-[5%] py-16 flex justify-center items-center bg-slate-50 min-h-[calc(100vh-160px)]">
+    <div class="w-full max-w-[600px] bg-white p-12 rounded-xl border border-slate-200 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.05)] animate-fade-in">
+      <h2 class="text-2xl font-semibold text-slate-800 text-center mb-8">Publish New Product/Service</h2>
       
       <form @submit.prevent="submitProduct">
-        <div class="input-group">
-          <label for="name">Product Name</label>
-          <input type="text" id="name" v-model="name" required placeholder="e.g. Managed IT Support" />
+        <div class="mb-6">
+          <label for="name" class="block mb-2 font-medium text-slate-800">Product Name</label>
+          <input type="text" id="name" v-model="name" required placeholder="e.g. Managed IT Support" class="w-full px-4 py-3 border border-slate-300 rounded-md font-inherit transition-colors focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100" />
         </div>
         
-        <div class="input-group">
-          <label for="description">Description</label>
-          <textarea id="description" v-model="description" rows="4" required placeholder="Describe the service..."></textarea>
+        <div class="mb-6">
+          <label for="description" class="block mb-2 font-medium text-slate-800">Description</label>
+          <textarea id="description" v-model="description" rows="4" required placeholder="Describe the service..." class="w-full px-4 py-3 border border-slate-300 rounded-md font-inherit transition-colors focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100"></textarea>
         </div>
         
-        <div class="input-group">
-          <label for="price">Price ($)</label>
-          <input type="number" id="price" v-model="price" step="0.01" required placeholder="0.00" />
+        <div class="mb-6">
+          <label for="price" class="block mb-2 font-medium text-slate-800">Price ($)</label>
+          <input type="number" id="price" v-model="price" step="0.01" required placeholder="0.00" class="w-full px-4 py-3 border border-slate-300 rounded-md font-inherit transition-colors focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100" />
         </div>
         
-        <div class="input-group">
-          <label for="imageUpload">Image (Optional)</label>
-          <input type="file" id="imageUpload" @change="handleFileChange" accept="image/*" />
+        <div class="mb-6">
+          <label for="imageUpload" class="block mb-2 font-medium text-slate-800">Image (Optional)</label>
+          <input type="file" id="imageUpload" @change="handleFileChange" accept="image/*" class="w-full px-4 py-3 border border-slate-300 rounded-md font-inherit transition-colors focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100" />
         </div>
         
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Publish</button>
+        <button type="submit" class="w-full bg-blue-600 text-white font-medium px-5 py-3.5 rounded-lg text-lg shadow-[0_4px_14px_0_rgba(37,99,235,0.39)] hover:bg-blue-700 hover:-translate-y-[1px] transition-all">Publish Service</button>
       </form>
       
-      <div v-if="statusMessage" class="status" :class="{ success: isSuccess, error: !isSuccess }">
+      <div v-if="statusMessage" :class="['mt-6 p-4 rounded-md text-center font-medium border', isSuccess ? 'bg-emerald-50 text-emerald-600 border-emerald-200' : 'bg-red-50 text-red-600 border-red-200']">
         {{ statusMessage }}
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-.admin {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0;
-}
-.form-container {
-  width: 100%;
-  max-width: 600px;
-  padding: 2.5rem;
-}
-.status {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 600;
-}
-.success {
-  background: rgba(16, 185, 129, 0.2);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-.error {
-  background: rgba(239, 68, 68, 0.2);
-  color: #ef4444;
-  border: 1px solid rgba(239, 68, 68, 0.3);
-}
-</style>
